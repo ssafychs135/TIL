@@ -97,9 +97,8 @@
     $ git add first.py
     ```
     
-
-Stage Area에 해당 파일을 추가함
-
+    Stage Area에 해당 파일을 추가함
+    
 - git commit
     
     ```bash
@@ -368,3 +367,25 @@ repo를 만들때 README.md를 만들고 시작했다면 clone 부터 해야함
     git의 감시에서 제외할 파일 목록을 작성
     
     단, 한번이라도 git에 감시를 받게 된 파일은 뺄 수 없음(추가 명령어 git rm  - -cache 필요)
+    
+
+# branch
+
+- 로컬 저장소 이름 변경
+    
+    ```bash
+    SSAFY@2□□PC041 MINGW64 ~/Desktop/TIL (main)
+    $ git branch -m main master
+    
+    SSAFY@2□□PC041 MINGW64 ~/Desktop/TIL (master)
+    $ git push origin master
+    Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+    remote: 
+    remote: Create a pull request for 'master' on GitHub by visiting:
+    remote:      https://github.com/ssafychs135/TIL/pull/new/master
+    remote:
+    To https://github.com/ssafychs135/TIL
+     * [new branch]      master -> master
+    ```
+    
+    기본 branch 이름을 master 로 변경하지 않고 만들어서 branch 명을 변경하였다 (main→master)
