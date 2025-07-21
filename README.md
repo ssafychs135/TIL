@@ -13,6 +13,7 @@
 
 ## Python
 - [f-string 심화학습](./f-string%20심화%20학습.md)
+- [파이썬 정적 타이핑에 대한 학습](./파이썬%20정적%20타이핑에%20대한%20학습.md)
 
 
 ## git
@@ -20,9 +21,7 @@
 
 - [git push, upstream](./git_push%20실패%20에러%20해결과%20upstream%20에%20대해.md)
 
-
 # web
-
 
 ## html
 
@@ -33,3 +32,7 @@
 ## Django
 
 ## spring
+
+## etc.
+ - [Python과 Java의 기본 타입 비교](./Python과%20Java의%20기본%20타입%20비교%20(int,%20float,%20string).md)
+---
