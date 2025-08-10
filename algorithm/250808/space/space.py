@@ -22,7 +22,7 @@ for tc in range(1, T + 1):
             if num == key_number[idx]:
                 num_count += 1
 
-        print(key_number[idx],num_count)
+        # print(key_number[idx],num_count)
         temp = (key_number[idx]+" ") * num_count
         # print(temp)
         sorted_numbers += temp
