@@ -36,7 +36,7 @@ for tc in range(1, T+1):
 
     
     # # 뒤집기 횟수 만큼 반복
-    for m in range(M):
+    for _ in range(M):
 
         i ,j = map(int, input().split())
 
@@ -52,5 +52,5 @@ for tc in range(1, T+1):
             else:
                 break
 
-
+    print(f'#{tc}', *game)
     print(f'#{tc} {" ".join(map(str, game))}')
