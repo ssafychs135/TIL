@@ -35,8 +35,8 @@ for tc in range(1, T+1):
     # N 전구 갯수
     # 조작 전, 조작 후
     N = int(input())
-    bulbs = list(map(bool, (map(int, input().split()))))
-    bulbs_man = list(map(bool, (map(int, input().split()))))
+    bulbs = list(map(int, input().split())))
+    bulbs_man = list( (map(int, input().split())))
 
     # i 번째 스위치를 조작하면 i 부터 N까지 전구 상태가 바뀐다
     # 전 후 배열의 교차가 몇번 이루어지는지 확인
@@ -48,19 +48,14 @@ for tc in range(1, T+1):
     count_flag = True
 
     for a in range(N):
-       bulbs[a]
-       bulbs_man[a]
 
-       # 원본 배열을 순회하면서 나의 이전값과 다르며 변경 후 배열의 값과도 다른 지점에서 카운트
-       if bulbs[a] != bulbs[a-1] and bulbs[a] != bulbs_man[a]:
-           pass
+        # 원본 배열을 순회하면서 나의 이전값과 다르며 변경 후 배열의 값과도 다른 지점에서 카운트
+        if bulbs[a] != bulbs_man[a] and count_flag:
+                counts +=1
+                print(a)
+                count_flag = not count_flag 
 
-           
-
+        
     
 
-
-
-    
-
-    print(f'#{tc} {None}')
+    print(f'#{tc} {counts}')
