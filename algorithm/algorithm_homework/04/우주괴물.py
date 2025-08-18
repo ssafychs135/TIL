@@ -55,23 +55,19 @@ for tc in range(1, T+1):
             ni = monster[0] + di[n]*m
             nj = monster[1] + dj[n]*m
             
-            if 0<= ni <N and 0<= nj <N:
+            if 0 <= ni <N and 0 <= nj <N:
                 
                 if space[ni][nj] == 0:
                     unsafe_area += 1
                 elif space[ni][nj] == 1:
                     break
-                
-                # if space[ni][nj] == 1:
-                #     break
-    
     block = 0
                 
     for i in range(N):
                         
         for j in range(N):
-             if space[i][j] == 1:
-                 block +=1 
+            if space[i][j] == 1:
+                block += 1 
     
     
     print(f'#{tc} {N**2 - block -unsafe_area -1}')
