@@ -3,14 +3,15 @@
 import sys
 
 # 입력을 파일로부터 받기 위한 설정입니다. (기존 코드와 동일)
-sys.stdin = open('오목판정.txt')
+sys.stdin = open("오목판정.txt")
+
 
 # 오목 여부를 판정하는 로직을 함수로 분리했습니다.
 # 함수로 만들면 코드를 재사용하기 쉽고, 'return'을 사용해 중간에 결과를 반환할 수 있어 편리합니다.
 def check_omok(N, stones):
     """
     N x N 크기의 stones 보드에 오목(돌 5개 연속)이 있는지 판정하는 함수
-    
+
     Args:
         N (int): 보드의 크기
         stones (list): 'o'와 '.'로 이루어진 2차원 리스트(보드)
@@ -18,7 +19,7 @@ def check_omok(N, stones):
     Returns:
         str: 오목이 있으면 "YES", 없으면 "NO"를 반환
     """
-    
+
     # 8방향 대신 4방향(오른쪽, 아래, 오른쪽 아래 대각선, 왼쪽 아래 대각선)만 검사해도 충분합니다.
     # (i, j) 위치에서 시작해서 오른쪽으로 5칸을 보는 것은, (i, j+4) 위치에서 왼쪽으로 5칸을 보는 것과 같기 때문입니다.
     # 이렇게 중복 검사를 줄이면 프로그램이 더 빨라집니다.
@@ -28,32 +29,32 @@ def check_omok(N, stones):
     # 보드의 모든 칸을 순회합니다. (i: 행, j: 열)
     for i in range(N):
         for j in range(N):
-            
+
             # 현재 칸에 돌('o')이 있는 경우에만 오목 가능성을 검사합니다.
             # 돌이 없으면 굳이 5칸을 확인할 필요가 없겠죠?
-            if stones[i][j] == 'o':
-                
+            if stones[i][j] == "o":
+
                 # 4가지 방향에 대해 검사를 시작합니다.
                 for d in range(4):
-                    
+
                     # 연속된 돌의 개수를 셉니다. 시작점도 돌이므로 1부터 시작합니다.
                     count = 1
-                    
+
                     # 현재 방향(d)으로 4칸을 더 확인합니다.
                     for m in range(1, 5):
                         ni = i + di[d] * m
                         nj = j + dj[d] * m
-                        
+
                         # 검사할 위치(ni, nj)가 보드 범위를 벗어나는지 확인합니다.
                         if not (0 <= ni < N and 0 <= nj < N):
                             break  # 범위를 벗어나면 더 이상 연속될 수 없으므로 중단합니다.
-                        
+
                         # 다음 위치에도 돌('o')이 있는지 확인합니다.
-                        if stones[ni][nj] == 'o':
+                        if stones[ni][nj] == "o":
                             count += 1
                         else:
-                            break # 돌이 연속되지 않으면 중단합니다.
-                    
+                            break  # 돌이 연속되지 않으면 중단합니다.
+
                     # 5개의 돌이 연속으로 놓여있는지 확인합니다.
                     if count == 5:
                         # 오목을 찾았으므로 즉시 "YES"를 반환하고 함수를 종료합니다.
@@ -71,17 +72,17 @@ def check_omok(N, stones):
 T = int(input())
 
 for tc in range(1, T + 1):
-    
+
     # 보드의 크기 N을 입력받습니다.
     N = int(input())
-    
+
     # 보드 정보를 입력받습니다.
     # list(input())을 사용하면 문자열을 한 글자씩 나눠서 리스트로 만들 수 있습니다.
     # 기존 코드의 list(map(str, input())) 보다 간결한 표현입니다.
     stones = [list(input()) for _ in range(N)]
-    
+
     # 오목 판정 함수를 호출하여 결과를 받습니다.
     result = check_omok(N, stones)
-    
+
     # 결과를 형식에 맞게 출력합니다.
-    print(f'#{tc} {result}')
+    print(f"#{tc} {result}")
